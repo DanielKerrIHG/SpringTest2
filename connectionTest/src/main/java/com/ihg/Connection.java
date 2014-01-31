@@ -14,10 +14,11 @@ import java.io.IOException;
  */
 public class Connection implements ConnectionInterface{
     public void send(String message) throws IOException{
-        System.out.println("HELLO " + message);
+        System.out.println("HELLO");
     }
     
     public String receive() throws IOException{
+        System.out.println("HELLO");
         return "HELLO";
     }
 }
