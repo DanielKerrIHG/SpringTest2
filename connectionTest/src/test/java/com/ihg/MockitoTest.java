@@ -23,9 +23,10 @@ import static org.hamcrest.Matchers.is;
 public class MockitoTest {
     
     @Test 
-    public void errorReceiveTest() throws IOException{        
+    public void errorTest() throws IOException{        
         Connection mockedConnection = mock(Connection.class);
         when(mockedConnection.receive()).thenThrow(new IOException());
+        doThrow(new IOException()).when(mockedConnection).send("Test Mesage");
         try{
             mockedConnection.send("Test Message");
         }catch(IOException e){
