@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.is;
 public class MockitoTest {
     
     @Test 
-    public void errorTest() throws IOException{        
+    public void errorCatchTest() throws IOException{        
         Connection mockedConnection = mock(Connection.class);
         when(mockedConnection.receive()).thenThrow(new IOException());
         doThrow(new IOException()).when(mockedConnection).send("Test Mesage");
@@ -44,7 +44,7 @@ public class MockitoTest {
     
     
     @Test
-    public void receiveTest() throws IOException{
+    public void receiveReturnValueTest() throws IOException{
         Connection connection = new Connection();
         String testRec = connection.receive();
         assertThat(testRec, is(equalTo("HELLO")));

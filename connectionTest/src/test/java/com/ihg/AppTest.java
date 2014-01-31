@@ -18,7 +18,7 @@ public class AppTest
    
 {
    @Test
-   public void connectionManagerTest(){
+   public void connectionManagerObjectTypeTest(){
        ApplicationContext context = 
              new ClassPathXmlApplicationContext("beans.xml");
        ConnectionManager cManager = (ConnectionManager) context.getBean("connectBean");
